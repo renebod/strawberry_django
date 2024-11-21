@@ -3,9 +3,6 @@ services:
   strawberry_demo:
     build:
       context: ./docker
-      # args:
-      #   - http_proxy=http://webproxy.frd.shsdir.nl:8080
-      #   - https_proxy=http://webproxy.frd.shsdir.nl:8080
     image: strawberry_django
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     # command: bash -c "django-admin startproject project"
