@@ -5,8 +5,6 @@ services:
       context: ./docker
     image: strawberry_django
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    # command: bash -c "django-admin startproject project"
-    # command: bash -c "python manage.py startapp demo"
     volumes:
       - ./code/:/code
     ports:
