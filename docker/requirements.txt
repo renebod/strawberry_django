@@ -1,0 +1,9 @@
+Django
+django_extensions
+# djangorestframework
+strawberry-graphql-django
+django-choices-field
+# psycopg2-binary
+# jupyter
+requests
+bs4

@@ -1,0 +1,26 @@
+enum FruitCategory {
+  CITRUS
+  BERRY
+}
+
+"""
+A tasty treat for Gio
+"""
+type Fruit {
+  id: ID!
+  name: String!
+  category: FruitCategory!
+  color: Color
+}
+
+type Color {
+  id: ID!
+  """
+  field description
+  """
+  name: String!
+  fruits: [Fruit!]
+}
+
+type Query {
+  fruits: [Fruit!]!

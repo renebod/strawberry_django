@@ -1,2 +1,1 @@
-# strawberry_django
-Demo for Strawberry with Django
+https://strawberry.rocks/docs/django

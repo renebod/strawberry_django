@@ -1,0 +1,35 @@
+services:
+
+  strawberry_demo:
+    build:
+      context: ./docker
+      # args:
+      #   - http_proxy=http://webproxy.frd.shsdir.nl:8080
+      #   - https_proxy=http://webproxy.frd.shsdir.nl:8080
+    image: strawberry_django
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    # command: bash -c "django-admin startproject project"
+    # command: bash -c "python manage.py startapp demo"
+    volumes:
+      - ./code/:/code
+    ports:
+      - 8000:8000
+    networks:
+      - lab_network
+
+  # my_db:
+  #   image: postgres
+  #   environment:
+  #     - 'POSTGRES_USER=postgres'
+  #     - 'POSTGRES_PASSWORD=secret123'
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+  #   networks:
+  #     - lab_network
+
+# volumes:
+#   pgdata:
+
+networks:
+  lab_network:
+    external: false
